@@ -90,6 +90,12 @@ class Person:
         
         return res    
     
+    @staticmethod
+    def test(a,b):
+        print('ajhdkjas', a, b)
+        
+        return "this is test"
+    
 person = Person("liza",22)
 person.normal_fun()
 # person.obj_createwithage_by_yr(Person, "this",96)     -> this gives error becoz object cannot access a classmethod
@@ -97,7 +103,13 @@ person.normal_fun()
 p2 = Person.obj_create_with_age_by_yr("ABC", 1998)
 print(p2.age, p2.name)
 
+print(type(person))
+print(type(p2))
+
 result = Person.add_vals()
 
-print("outisde result", result)
+st_res = Person.test(5, "string test")
+print("type of str_res", type(st_res))
+
+print("outisde result for static method", st_res)
     
